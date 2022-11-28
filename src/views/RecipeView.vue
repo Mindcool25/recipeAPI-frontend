@@ -1,19 +1,22 @@
 <script setup>
-import {ref} from 'vue'
-import recipe from "../components/recipe.vue"
+  import { ref } from "vue";
+  import recipe from "../components/recipe.vue";
 
-const test = ref('testing');
+  const loading = ref(true);
+  const r = ref(null);
 
-async function get_response() {
-	const res = await fetch("http://127.0.0.1:8000/db/1");
-	test.value = await res.json();
-	console.log(test.value);
-	return test
-}
-get_response();
+  async function get_response() {
+    const res = await fetch("http://127.0.0.1:8000/db/1");
+    r.value = await res.json();
+    console.log(r.value);
+    loading.value = false;
+    console.log(loading);
+    return r;
+  }
+  get_response();
 </script>
 
 <template>
-	<recipe v-if="test != 'testing'" :recipe="test"/>
-	<p v-else>Loading...</p>
+  <recipe v-if="!loading" :recipe="r" />
+  <p v-else>Loading...</p>
 </template>
