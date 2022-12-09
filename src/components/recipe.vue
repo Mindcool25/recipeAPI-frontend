@@ -5,19 +5,18 @@
 </script>
 
 <template>
-  <h1>ID: {{ recipe.id }}</h1>
   <h2>Title: {{ recipe.title }}</h2>
   <p>Author: {{ recipe.author }}</p>
   <h3>Ingredients:</h3>
   <ul>
-    <li v-for="item of JSON.parse(recipe.ingredients)['ingredients']">
-      {{ item["amount"] }} - {{ item["name"] }}
+    <li v-for="ingredient in recipe.ingredients">
+      {{ingredient.name}} - {{ingredient.amount}}
     </li>
   </ul>
   <h3>Instructions:</h3>
   <ol>
-    <li v-for="item of JSON.parse(recipe.instructions)['instructions']">
-      {{ item }}
+    <li v-for="instruction in recipe.instructions">
+      {{instruction}}
     </li>
   </ol>
   <p>Notes: {{ recipe.notes }}</p>

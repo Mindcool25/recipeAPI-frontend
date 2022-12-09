@@ -6,7 +6,7 @@
   const r = ref(null);
 
   async function get_response() {
-    const res = await fetch("http://127.0.0.1:8000/db/1");
+    const res = await fetch("http://127.0.0.1:8000/author/Mindcool24");
     r.value = await res.json();
     console.log(r.value);
     loading.value = false;
