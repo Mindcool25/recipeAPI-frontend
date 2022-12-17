@@ -6,6 +6,7 @@ var title = "";
 var author = "";
 var ingredients = ref([{i_name:"", amount:""}])
 var instructions = ref([{id:id++, text:""}])
+var notes = "";
 
 function newIngredient() {
   // Pushing a new empty ingredient to the ingredients list
@@ -39,7 +40,7 @@ function submit() {
     "author": author,
     "ingredients": ingredients.value,
     "instructions": instruction_list,
-    "notes": "Empty for now",
+    "notes": notes,
   };
 
   // POST request to the server with given data
@@ -57,7 +58,7 @@ function submit() {
   Author
   Ingredient list
   Instruction list
-  TODO: Notes
+  Notes
   -->
 <template>
 <form @submit.prevent="submit">
@@ -91,6 +92,8 @@ function submit() {
   <form @submit.prevent="newInstruction">
     <button>Add Instruction</button>
   </form>
+  <textarea v-model="notes"></textarea>
+  <br>
   <button>Submit</button>
 </form>
 </template>
