@@ -11,4 +11,10 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  server: {
+    cors: false,
+    headers: { "Access-Control-Allow-Origin": "*" },
+    proxy: 'http://localhost:8000'
+  }
 });
+

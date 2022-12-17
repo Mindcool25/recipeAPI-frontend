@@ -13,7 +13,6 @@ async function send_response(){
   };
   fetch("http://127.0.0.1:8000/submit", options);
 }
-send_response();
 </script>
 
 <template>

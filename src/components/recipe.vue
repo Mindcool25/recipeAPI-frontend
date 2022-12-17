@@ -10,7 +10,7 @@
   <h3>Ingredients:</h3>
   <ul>
     <li v-for="ingredient in recipe.ingredients">
-      {{ingredient.name}} - {{ingredient.amount}}
+      {{ingredient.i_name}} - {{ingredient.amount}}
     </li>
   </ul>
   <h3>Instructions:</h3>
