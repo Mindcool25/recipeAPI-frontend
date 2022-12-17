@@ -105,8 +105,8 @@
       <button>Add Ingredient</button>
     </form>
 
-  <div>
-    <p>Instructions:</p>
+    <div>
+      <p>Instructions:</p>
       <ol>
         <li v-for="ins in instructions">
           <input

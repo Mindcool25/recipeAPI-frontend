@@ -6,10 +6,10 @@
   const loading = ref(true);
   const r = ref(null);
   const route = useRoute();
-  
+
   async function get_response() {
     const id = route.params.id;
-    const url = `http://127.0.0.1:8000/id/${id}`
+    const url = `http://127.0.0.1:8000/id/${id}`;
     const res = await fetch(url);
     r.value = await res.json();
     console.log(r.value);
