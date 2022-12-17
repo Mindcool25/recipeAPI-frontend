@@ -82,6 +82,7 @@
     </div>
 
     <div>
+      <p>Ingredients:</p>
       <ul>
         <li v-for="ing in ingredients">
           <input
@@ -104,7 +105,8 @@
       <button>Add Ingredient</button>
     </form>
 
-    <div>
+  <div>
+    <p>Instructions:</p>
       <ol>
         <li v-for="ins in instructions">
           <input

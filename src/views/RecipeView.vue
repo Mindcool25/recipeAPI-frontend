@@ -1,12 +1,16 @@
 <script setup>
   import { ref } from "vue";
   import recipe from "../components/recipe.vue";
+  import { useRoute } from "vue-router";
 
   const loading = ref(true);
   const r = ref(null);
-
+  const route = useRoute();
+  
   async function get_response() {
-    const res = await fetch("http://127.0.0.1:8000/author/Mindcool24");
+    const id = route.params.id;
+    const url = `http://127.0.0.1:8000/id/${id}`
+    const res = await fetch(url);
     r.value = await res.json();
     console.log(r.value);
     loading.value = false;
