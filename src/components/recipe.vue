@@ -10,13 +10,13 @@
   <h3>Ingredients:</h3>
   <ul>
     <li v-for="ingredient in recipe.ingredients">
-      {{ingredient.i_name}} - {{ingredient.amount}}
+      {{ ingredient.i_name }} - {{ ingredient.amount }}
     </li>
   </ul>
   <h3>Instructions:</h3>
   <ol>
     <li v-for="instruction in recipe.instructions">
-      {{instruction}}
+      {{ instruction }}
     </li>
   </ol>
   <p>Notes: {{ recipe.notes }}</p>

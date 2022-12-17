@@ -14,7 +14,6 @@ export default defineConfig({
   server: {
     cors: false,
     headers: { "Access-Control-Allow-Origin": "*" },
-    proxy: 'http://localhost:8000'
-  }
+    proxy: "http://localhost:8000",
+  },
 });
-
