@@ -4,34 +4,36 @@ import {ref} from 'vue'
 var id = 0;
 var title = "";
 var author = "";
-var newI = ref('')
 var ingredients = ref([{i_name:"", amount:""}])
 var instructions = ref([{id:id++, text:""}])
 
 function newIngredient() {
+  // Pushing a new empty ingredient to the ingredients list
   ingredients.value.push({name:"", amount:""})
   console.log(ingredients)
 }
 function removeIng(ing) {
+  // Removes gven ingredient by ID
   ingredients.value = ingredients.value.filter((i)=>i!==ing)
 }
 
 function newInstruction() {
+  // Pushes new empty instruction to instruction list
   instructions.value.push({id:id++, text:""})
   console.log(instructions)
 }
 function removeInst(inst) {
+  // Removes given instruction by ID
   instructions.value = instructions.value.filter((i)=>i!==inst)
 }
 
 function submit() {
+  // Putting all instructions into a list to send to server
   var instruction_list = []
   for (const i in instructions.value) {
-    console.log("i: ", instructions.value[i].text);
     instruction_list.push(instructions.value[i].text);
   }
-  console.log(instructions)
-  console.log(instruction_list)
+  // Setting up the data to be in a structure the server can read
   const data = {
     "title": title,
     "author": author,
@@ -39,16 +41,24 @@ function submit() {
     "instructions": instruction_list,
     "notes": "Empty for now",
   };
-  console.log("Data setup as ", data)
+
+  // POST request to the server with given data
   const options = {
     method: 'POST',
     body: JSON.stringify(data),
   };
   fetch("http://127.0.0.1:8000/submit", options);
-  console.log("sent r");
 }
 </script>
-
+<!--
+  Form for submitting a Recipe
+  Organized like the following:
+  Title
+  Author
+  Ingredient list
+  Instruction list
+  TODO: Notes
+  -->
 <template>
 <form @submit.prevent="submit">
   <div class="form-control">
