@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Recipe from "./views/RecipeView.vue";
 import Submit from "./views/SubmitView.vue";
+import Author from "./views/AuthorView.vue";
+
 const routes = [
   {
     path: "/recipe/:id",
@@ -11,6 +13,11 @@ const routes = [
     path: "/submit",
     name: "Submit",
     component: Submit,
+  },
+  {
+    path:"/author/:author",
+    name:"Author",
+    component: Author,
   },
 ];
 const router = createRouter({
