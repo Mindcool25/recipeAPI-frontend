@@ -15,8 +15,8 @@ const routes = [
     component: Submit,
   },
   {
-    path:"/author/:author",
-    name:"Author",
+    path: "/author/:author",
+    name: "Author",
     component: Author,
   },
 ];

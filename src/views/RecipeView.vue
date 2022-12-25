@@ -1,6 +1,6 @@
 <script setup>
   import { ref } from "vue";
-  import recipe from "../components/recipe.vue";
+  import recipe from "../components/FullRecipe.vue";
   import { useRoute } from "vue-router";
 
   const loading = ref(true);

@@ -1,4 +1,3 @@
-
 <script setup>
   import { ref } from "vue";
   import condensed_recipe from "../components/CondensedRecipe.vue";
@@ -20,8 +19,10 @@
 </script>
 
 <template>
-  <div v-if="!loading" v-for="recipe in r.r_list">
-    <condensed_recipe v-if="!loading" :recipe="recipe"/>
+  <div v-if="!loading">
+    <div v-for="(recipe, index) in r.r_list" :key="index">
+      <condensed_recipe v-if="!loading" :recipe="recipe" />
+    </div>
   </div>
   <p v-else>Loading...</p>
 </template>

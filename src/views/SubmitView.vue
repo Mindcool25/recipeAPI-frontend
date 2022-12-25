@@ -14,7 +14,7 @@
     console.log(ingredients);
   }
   function removeIng(ing) {
-    // Removes gven ingredient by ID
+    // Removes given ingredient by ID
     ingredients.value = ingredients.value.filter((i) => i !== ing);
   }
 
@@ -84,7 +84,7 @@
     <div>
       <p>Ingredients:</p>
       <ul>
-        <li v-for="ing in ingredients">
+        <li v-for="(ing, index) in ingredients" :key="index">
           <input
             v-model="ing.i_name"
             type="text"
@@ -108,7 +108,7 @@
     <div>
       <p>Instructions:</p>
       <ol>
-        <li v-for="ins in instructions">
+        <li v-for="(ins, index) in instructions" :key="index">
           <input
             v-model="ins.text"
             type="text"
