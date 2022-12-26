@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import Recipe from "./views/RecipeView.vue";
 import Submit from "./views/SubmitView.vue";
 import Author from "./views/AuthorView.vue";
+import Browse from "./views/BrowseView.vue";
+import Search from "./views/SearchView.vue";
 
 const routes = [
   {
@@ -19,6 +21,17 @@ const routes = [
     name: "Author",
     component: Author,
   },
+  {
+    path: "/browse",
+    name: "Browse",
+    component: Browse,
+  },
+  {
+    path: "/search",
+    name: "Search",
+    component: Search,
+  },
+
 ];
 const router = createRouter({
   history: createWebHistory(),
