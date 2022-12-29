@@ -1,11 +1,10 @@
 <script setup>
   import { ref } from "vue";
-  import condensed_recipe from "../components/CondensedRecipe.vue"
-  import { useRoute } from "vue-router";
+  import condensed_recipe from "../components/CondensedRecipe.vue";
 
   const loading = ref(true);
-  const r = ref(null)
-  const input = ref("")
+  const r = ref(null);
+  const input = ref("");
 
   async function search(input) {
     const title = input;
@@ -18,12 +17,12 @@
 
 <template>
   <div>
-    <input type="text" v-model="input" placeholder="Search Recipes"/>
-    <button @click = "search(input)">Search</button>
+    <input v-model="input" type="text" placeholder="Search Recipes" />
+    <button @click="search(input)">Search</button>
   </div>
   <div v-if="!loading">
     <div v-for="(recipe, index) in r.r_list" :key="index">
-      <condensed_recipe :recipe="recipe"/>
+      <condensed_recipe :recipe="recipe" />
     </div>
   </div>
 </template>

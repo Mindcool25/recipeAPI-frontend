@@ -31,7 +31,6 @@ const routes = [
     name: "Search",
     component: Search,
   },
-
 ];
 const router = createRouter({
   history: createWebHistory(),
