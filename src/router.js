@@ -4,8 +4,14 @@ import Submit from "./views/SubmitView.vue";
 import Author from "./views/AuthorView.vue";
 import Browse from "./views/BrowseView.vue";
 import Search from "./views/SearchView.vue";
+import Main from "./views/MainView.vue";
 
 const routes = [
+  {
+    path: "/",
+    name: "Main",
+    component: Main,
+  },
   {
     path: "/recipe/:id",
     name: "Recipe",
