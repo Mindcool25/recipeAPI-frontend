@@ -84,7 +84,7 @@
     <div>
       <p>Ingredients:</p>
       <ul>
-        <li v-for="(ing, index) in ingredients" :key="index">
+        <li v-for="ing in ingredients">
           <input
             v-model="ing.i_name"
             type="text"
@@ -108,7 +108,7 @@
     <div>
       <p>Instructions:</p>
       <ol>
-        <li v-for="(ins, index) in instructions" :key="index">
+        <li v-for="(ins, index) in instructions" :key=index>
           <input
             v-model="ins.text"
             type="text"
