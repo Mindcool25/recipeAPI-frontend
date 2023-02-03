@@ -19,7 +19,7 @@
 <template>
   <h1>Welcome to Mindcoo24's Recipe Database!</h1>
   <h2>Random Recipe:</h2>
-  <LinkBar/>
+  <LinkBar />
   <recipe v-if="!loading" :recipe="r" />
   <p v-else>Loading...</p>
 </template>

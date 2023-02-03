@@ -19,14 +19,14 @@
     ingredients.value = ingredients.value.filter((i) => i !== ing);
   }
   function upIng(ing) {
-    let index = ingredients.value.indexOf(ing)
+    let index = ingredients.value.indexOf(ing);
     if (index != 0) {
       ingredients.value[index] = ingredients.value[index - 1];
       ingredients.value[index - 1] = ing;
     }
   }
   function downIng(ing) {
-    let index = ingredients.value.indexOf(ing)
+    let index = ingredients.value.indexOf(ing);
     if (index != ingredients.value.length - 1) {
       ingredients.value[index] = ingredients.value[index + 1];
       ingredients.value[index + 1] = ing;
@@ -43,14 +43,14 @@
     instructions.value = instructions.value.filter((i) => i !== inst);
   }
   function upInst(inst) {
-    let index = instructions.value.indexOf(inst)
-    if (index !=0) {
+    let index = instructions.value.indexOf(inst);
+    if (index != 0) {
       instructions.value[index] = instructions.value[index - 1];
       instructions.value[index - 1] = inst;
     }
   }
   function downInst(inst) {
-    let index = instructions.value.indexOf(inst)
+    let index = instructions.value.indexOf(inst);
     if (index != instructions.value.length - 1) {
       instructions.value[index] = instructions.value[index + 1];
       instructions.value[index + 1] = inst;
@@ -162,5 +162,5 @@
     <br />
     <button>Submit</button>
   </form>
-  <LinkBar/>
+  <LinkBar />
 </template>
