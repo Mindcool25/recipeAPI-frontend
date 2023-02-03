@@ -1,5 +1,6 @@
 <script setup>
   import { ref } from "vue";
+  import LinkBar from "../components/LinkBar.vue";
 
   var id = 0;
   var title = "";
@@ -17,6 +18,20 @@
     // Removes given ingredient by ID
     ingredients.value = ingredients.value.filter((i) => i !== ing);
   }
+  function upIng(ing) {
+    let index = ingredients.value.indexOf(ing)
+    if (index != 0) {
+      ingredients.value[index] = ingredients.value[index - 1];
+      ingredients.value[index - 1] = ing;
+    }
+  }
+  function downIng(ing) {
+    let index = ingredients.value.indexOf(ing)
+    if (index != ingredients.value.length - 1) {
+      ingredients.value[index] = ingredients.value[index + 1];
+      ingredients.value[index + 1] = ing;
+    }
+  }
 
   function newInstruction() {
     // Pushes new empty instruction to instruction list
@@ -26,6 +41,20 @@
   function removeInst(inst) {
     // Removes given instruction by ID
     instructions.value = instructions.value.filter((i) => i !== inst);
+  }
+  function upInst(inst) {
+    let index = instructions.value.indexOf(inst)
+    if (index !=0) {
+      instructions.value[index] = instructions.value[index - 1];
+      instructions.value[index - 1] = inst;
+    }
+  }
+  function downInst(inst) {
+    let index = instructions.value.indexOf(inst)
+    if (index != instructions.value.length - 1) {
+      instructions.value[index] = instructions.value[index + 1];
+      instructions.value[index + 1] = inst;
+    }
   }
 
   function submit() {
@@ -97,7 +126,10 @@
             type="text"
             name="amount"
             placeholder="Amount"
-          /><button @click="removeIng(ing)">X</button>
+          />
+          <button @click="upIng(ing)">↑</button>
+          <button @click="downIng(ing)">↓</button>
+          <button @click="removeIng(ing)">X</button>
         </li>
       </ul>
     </div>
@@ -115,15 +147,20 @@
             name="instruction"
             placeholder="Instructions"
             style="width: 60%"
-          /><button @click="removeInst(ins)">X</button>
+          />
+          <button @click="upInst(ins)">↑</button>
+          <button @click="downInst(ins)">↓</button>
+          <button @click="removeInst(ins)">X</button>
         </li>
       </ol>
     </div>
     <form @submit.prevent="newInstruction">
       <button>Add Instruction</button>
     </form>
+    <p>Notes:</p>
     <textarea v-model="notes"></textarea>
     <br />
     <button>Submit</button>
   </form>
+  <LinkBar/>
 </template>
